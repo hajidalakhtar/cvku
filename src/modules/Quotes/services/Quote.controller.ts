@@ -28,10 +28,11 @@ class CQuote extends Controller {
         // eslint-disable-next-line unicorn/no-await-expression-member
         const height = (await (await pageElement?.getProperty('scrollHeight'))?.jsonValue()) ?? 0;
 
-        const temporaryHtml = await page.evaluate((element: HTMLDivElement) => {
-          const clonedElement = element.cloneNode(true) as HTMLDivElement;
+        const temporaryHtml = await page.evaluate((element) => {
+          if (!element) return document.body.innerHTML;
+          const clonedElement = element.cloneNode(true) as HTMLElement;
           const temporaryHtml_ = document.body.innerHTML;
-          document.body.innerHTML = clonedElement.outerHTML;
+          document.body.innerHTML = (clonedElement as HTMLElement).outerHTML;
           return temporaryHtml_;
         }, pageElement);
 
@@ -66,13 +67,13 @@ class CQuote extends Controller {
         }
       });
     } catch (error) {
-      console.log(error);
 
       return this.sendJSON(
         {
           code: 200,
-          message: error
-        }
+          message: 'asdasd'
+        },
+        { title: 'Error' }
       );
 
     }

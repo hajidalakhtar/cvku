@@ -10,7 +10,7 @@ import React, { Fragment } from 'react';
 
 import cn from '@/utils/cn';
 import { linearTransform } from '@/utils/number';
-import { Experience, Award, Certification, CustomSection, CustomSectionGroup, Interest, Language, Profile, Project, Publication, Reference, SectionKey, SectionWithItem, Skill } from '@/libs/schema/sections';
+import type { Experience, Education, Award, Certification, CustomSection, CustomSectionGroup, Interest, Language, Profile, Project, Publication, Reference, SectionKey, SectionWithItem, Skill, Volunteer as VolunteerType } from '@/libs/schema/sections';
 import { useArtboardStore } from '@/store/artboard';
 import { isEmptyString, isUrl, sanitize } from '@/utils/string';
 
@@ -113,7 +113,7 @@ const Rating = ({ level }: RatingProps) => (
 );
 
 type LinkProps = {
-  url: URL;
+  url: any;
   icon?: React.ReactNode;
   iconOnRight?: boolean;
   label?: string;
@@ -141,7 +141,7 @@ const Link = ({ url, icon, iconOnRight, label, className }: LinkProps) => {
 
 type LinkedEntityProps = {
   name: string;
-  url: URL;
+  url: any;
   separateLinks: boolean;
   className?: string;
 };
@@ -387,7 +387,7 @@ const Volunteer = () => {
   const section = useArtboardStore((state) => state.resume.sections.volunteer);
 
   return (
-    <Section<Volunteer> section={section} urlKey="url" summaryKey="summary">
+    <Section<VolunteerType> section={section} urlKey="url" summaryKey="summary">
       {(item) => (
         <div>
           <LinkedEntity

@@ -20,7 +20,7 @@ import type { Schema } from 'zod';
 import type { JsonResume } from './schema';
 import { jsonResumeSchema } from './schema';
 import { defaultResumeData } from '@/libs/schema';
-import { defaultAward, defaultCertification, defaultEducation, defaultExperience, defaultPublication, defaultReference, defaultSkill, defaultVolunteer } from '@/libs/schema/sections';
+import { defaultAward, defaultCertification, defaultEducation, defaultExperience, defaultInterest, defaultLanguage, defaultProfile, defaultPublication, defaultReference, defaultSkill, defaultVolunteer } from '@/libs/schema/sections';
 
 // // export * from "./schema";
 

@@ -14,7 +14,7 @@ class CQuote extends Controller {
         code: 200,
         message: 'Success get random quote.',
         payload
-      });
+      }, { title: 'Success' });
     } catch (err) {
       return this.handleError(err);
     }
