@@ -1,3 +1,3 @@
-import ResumePage from '@/modules/Resume/resume.page';
+import ResumePage from '@/modules/Resume/Resume.page';
 
 export default ResumePage;
