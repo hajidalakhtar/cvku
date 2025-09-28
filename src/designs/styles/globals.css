@@ -121,3 +121,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* A4 Resume Styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .a4-resume {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 20mm !important;
+    box-shadow: none !important;
+    page-break-after: always;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+@media screen {
+  .a4-resume {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+}

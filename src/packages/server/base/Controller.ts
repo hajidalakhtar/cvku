@@ -6,7 +6,7 @@ import HttpError from '@/packages/server/base/HttpError';
 abstract class Controller {
   protected static response = NextResponse;
 
-  sendJSON<T>(data: HttpResponseJson<T>) {
+  sendJSON<T>(data: HttpResponseJson<T>, p0: { title: string; }) {
     return Controller.sendJSON(data);
   }
 
