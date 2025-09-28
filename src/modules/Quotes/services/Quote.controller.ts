@@ -21,7 +21,7 @@ class CQuote extends Controller {
       const page = await browser.newPage();
       const numberPages = 1;
 
-      await page.goto('http://localhost:3000/resume', { waitUntil: 'networkidle0' });
+      await page.goto('https://cvku-two.vercel.app/resume', { waitUntil: 'networkidle0' });
 
       const pagesBuffer: Buffer[] = [];
 
