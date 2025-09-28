@@ -1,7 +1,6 @@
 import Controller from '@/packages/server/base/Controller';
 import { PDFDocument } from 'pdf-lib';
 import puppeteer from 'puppeteer';
-
 class CQuote extends Controller {
   /**
    * Use arrow function to create Controller method.
@@ -10,6 +9,7 @@ class CQuote extends Controller {
    */
 
   public random = async() => {
+
     try {
       const browser = await puppeteer.launch({
         headless: true
