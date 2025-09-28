@@ -68,6 +68,8 @@ class CQuote extends Controller {
       });
     } catch (error) {
 
+      console.log(error);
+
       return this.sendJSON(
         {
           code: 200,
