@@ -1,6 +1,7 @@
 import Controller from '@/packages/server/base/Controller';
 import { PDFDocument } from 'pdf-lib';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 class CQuote extends Controller {
   /**
    * Use arrow function to create Controller method.
@@ -9,9 +10,12 @@ class CQuote extends Controller {
    */
 
   public random = async() => {
-
+    const chromiumPack = 'https://github.com/Sparticuz/chromium/releases/download/v121.0.0/chromium-v121.0.0-pack.tar';
     try {
       const browser = await puppeteer.launch({
+        args: chromium.args,
+        executablePath: await chromium.executablePath(chromiumPack),
+
         headless: true
       });
       const page = await browser.newPage();
